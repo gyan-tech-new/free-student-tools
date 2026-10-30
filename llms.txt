@@ -1,0 +1,15 @@
+# StudentDocs — Free & Private Academic Utility Suite
+> A fast, 100% client-side collection of online tools for students, researchers, and document preparation. Zero server uploads, zero watermarks, and unlimited free usage.
+
+## Available Tools
+
+- [Smart Scientific Math Calculator](https://student-tools.vercel.app/math-calculator/): A human-friendly alternative to Casio fx-991ES with Fractions (S⇄D), Trigonometry (DEG/RAD), Quadratic & Linear Solvers, Statistics (Mean, Median, Mode, Std Dev), Definite Integrals, Derivatives, Modulo (mod), and Modulus (|x|).
+- [Exam Photo & Signature Compressor](https://student-tools.vercel.app/photo-compress/): 1-click photo and signature compressor for competitive government exams (SSC, UPSC, NEET, Police, Railway). Downscales resolution to match strict 20-50KB limits while retaining 88%+ facial clarity without blur.
+- [High-DPI PDF Compressor](https://student-tools.vercel.app/pdf-compress/): Client-side PDF size reducer running 2.0x DPI (144 DPI) canvas rendering with native point mapping. Shrinks large documents while keeping text crystal clear.
+- [Image to PDF Converter](https://student-tools.vercel.app/img2pdf/): Converts JPG, PNG, and WebP scans into clean A4 or Letter PDFs with configurable margins and orientation.
+- [Merge PDF Documents](https://student-tools.vercel.app/merge-pdf/): Combines multiple PDF files with intuitive page reordering into a single document using lossless client-side stream merging.
+- [Text to PDF Generator](https://student-tools.vercel.app/text2pdf/): Formats raw text notes or `.txt` files into downloadable PDF documents with custom fonts (Helvetica, Times, Courier).
+
+## Privacy & Security Architecture
+- 100% Client-Side execution using WebAssembly, Canvas API, MathJS, PDF-Lib, and jsPDF.
+- No user documents or calculations are transmitted to external servers.

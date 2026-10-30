@@ -1,0 +1,17 @@
+# StudentDocs Smart Scientific & Math Calculator
+
+> Modern, intuitive online scientific calculator and math suite based on Casio fx-991ES / CalcES functionality, designed for students, engineers, and everyday learners with a human-friendly modern UI.
+
+## Capabilities
+- Natural expression calculation: arithmetic, fractions, mixed numbers, powers, roots, scientific notation.
+- Advanced functions: Trigonometry (sin, cos, tan, cot, sec, csc with DEG/RAD), hyperbolic, logs (ln, log10, log_b), factorials, permutations (nPr), combinations (nCr), GCD, LCM.
+- Physical & Universal Constants (Planck, speed of light, gravitational constant, Avogadro, gas constant).
+- Integrated Solvers: Quadratic equation solver with discriminant and vertex, 2-variable linear system solver.
+- Statistics Calculator: Mean, median, mode, sample & population standard deviation, variance, quartiles.
+- Numerical Calculus: Numerical derivative d/dx and numerical definite integral.
+- Unit Converter: Length, weight/mass, temperature, speed, area.
+- 100% Client-Side Engine powered by MathJS: zero tracking, instantaneous execution.
+
+## Core URLs
+- Application Home: https://math-calculator.vercel.app/
+- Sitemap: https://math-calculator.vercel.app/sitemap.xml

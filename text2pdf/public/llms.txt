@@ -1,0 +1,13 @@
+# StudentDocs Text to PDF Converter
+
+> Free, 100% private, client-side Text and TXT to PDF converter for students, essays, study notes, and legal documentation.
+
+## Capabilities
+- Converts typed, pasted, or uploaded plain text (.txt) files into clean, beautifully formatted A4 PDF documents.
+- Custom typography: font family (Helvetica, Times, Courier), font size, line spacing, margins, and paper orientation.
+- Live word counter and character counter.
+- 100% client-side compilation using jsPDF: zero server uploads, 100% confidential.
+
+## Core URLs
+- Application Home: https://text2pdf.vercel.app/
+- Sitemap: https://text2pdf.vercel.app/sitemap.xml

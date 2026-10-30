@@ -1,0 +1,13 @@
+# StudentDocs Image to PDF Converter
+
+> Free, 100% private, client-side JPG/PNG to PDF converter for students, job applicants, and educators.
+
+## Capabilities
+- Converts multiple images (JPG, PNG, WebP) into a single, clean PDF file.
+- Client-side execution using jsPDF: zero server uploads, 100% data privacy.
+- Customizable page margins, orientation (Portrait/Landscape), and page formats (A4, Letter).
+- Built specifically for college assignments, exam application document uploads, and notes packaging.
+
+## Core URLs
+- Application Home: https://img2pdf.vercel.app/
+- Sitemap: https://img2pdf.vercel.app/sitemap.xml

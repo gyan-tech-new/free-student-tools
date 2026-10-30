@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentDocs — Free, Fast & Private Online Student & PDF Tools</title>
+  <meta name="description" content="All-in-one free suite of student utilities: Smart Scientific Calculator, Photo Compressor for Govt Exams (SSC, UPSC, NEET), High-DPI PDF Compressor, Merge PDF, and Image to PDF. 100% Client-Side & Private.">
+  <meta name="keywords" content="student tools, scientific calculator online, photo compress for ssc, image to pdf, merge pdf free, pdf compress, studentdocs">
+  <link rel="canonical" href="https://student-tools.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="StudentDocs — 100% Free & Private Online Student Tools">
+  <meta property="og:description" content="Scientific calculator, exam photo compressor, PDF merger, and document converters. Runs 100% locally in your browser with zero server uploads.">
+  <meta property="og:url" content="https://student-tools.vercel.app/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StudentDocs — Free & Private Online Student Tools">
+  <meta name="twitter:description" content="Scientific calculator, exam photo compressor, PDF merger, and document converters. 100% local browser processing.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=630&fit=crop&q=80">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://student-tools.vercel.app/#website",
+        "url": "https://student-tools.vercel.app/",
+        "name": "StudentDocs",
+        "description": "Free, Private & Client-Side Utility Suite for Students and Professionals",
+        "publisher": {
+          "@type": "Organization",
+          "name": "StudentDocs"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "StudentDocs Suite",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tool-card {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2.5">
+        <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
+          🎓
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight text-slate-900">Student<span class="text-indigo-600">Docs</span></span>
+          <span class="text-[10px] text-slate-500 block leading-tight font-medium">Free Academic Tools Suite</span>
+        </div>
+      </a>
+
+      <div class="flex items-center space-x-4 text-xs sm:text-sm font-semibold">
+        <a href="#tools" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">All Tools</a>
+        <a href="#privacy" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">Privacy Guarantee</a>
+        <a href="#faq" class="hover:text-indigo-600 transition text-slate-600">FAQ</a>
+        <span class="text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 border border-emerald-200 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          100% Client-Side
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 md:py-20 px-4 bg-gradient-to-b from-white via-indigo-50/20 to-slate-50 border-b border-slate-200/80">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold mb-6">
+        <span>⚡</span> Zero Server Uploads • Zero Cost • Unlimited Usage
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-none mb-6">
+        Fast, Private & Free Tools <br class="hidden sm:inline">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Built for Students</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+        Solve advanced math equations, compress passport photos for government exam forms, merge lecture notes, and generate PDFs — entirely inside your web browser.
+      </p>
+
+      <!-- Instant Filter / Search Bar -->
+      <div class="max-w-md mx-auto relative mb-6">
+        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+          🔍
+        </span>
+        <input type="text" id="toolSearch" placeholder="Search tools (e.g. math, photo, pdf, merge)..." class="w-full pl-10 pr-4 py-3 bg-white border border-slate-300 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Tools Grid -->
+  <main class="max-w-6xl mx-auto px-4 py-12 flex-1 w-full" id="tools">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl font-extrabold text-slate-900">Featured Student Utilities</h2>
+        <p class="text-xs sm:text-sm text-slate-500">Pick a tool to start working immediately with zero login required.</p>
+      </div>
+      <span class="text-xs font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-lg">6 Tools Available</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolGrid">
+
+      <!-- Tool 1: Math Calculator -->
+      <a href="/math-calculator/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-indigo-300 transition duration-200 flex flex-col justify-between" data-keywords="math scientific calculator trigonometry equations quadratic calculus fractions modulo modulus derivative integral">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            🧮
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition">Smart Scientific Math Calculator</h3>
+            <span class="bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-indigo-200">Featured</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Easy-to-use alternative to Casio fx-991ES. Fractions (S ⇄ D), quadratic solvers, statistics, calculus derivatives & integrals, modulo, and scientific constants.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Trigonometry</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Quadratic</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Calculus</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Fractions</span>
+          </div>
+          <span class="text-xs font-bold text-indigo-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Launch Calculator →
+          </span>
+        </div>
+      </a>
+
+      <!-- Tool 2: Photo Compress -->
+      <a href="/photo-compress/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-300 transition duration-200 flex flex-col justify-between" data-keywords="photo compress exam ssc upsc neet signature resize passport kb 20kb 50kb reduce size">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            🖼️
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-emerald-600 transition">Exam Photo & Signature Compressor</h3>
+            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200">Exam Essential</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Compress photos and signatures for SSC, UPSC, NEET, Police & Railway forms. 1-click 20-50KB presets with high facial clarity and zero blur.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">SSC (20-50KB)</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Signature (10-20KB)</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">High Clarity</span>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Compress Photo →
+          </span>
+        </div>
+      </a>
+
+      <!-- Tool 3: PDF Compress -->
+      <a href="/pdf-compress/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition duration-200 flex flex-col justify-between" data-keywords="pdf compress shrink reduce size mb kb crisp text high dpi dpi 2x university portal">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            🗜️
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition">High-DPI PDF Compressor</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Shrink heavy PDF documents by up to 80% while preserving razor-sharp text (144 DPI 2.0x scale). Perfect for college portals and scholarship uploads.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">144 DPI Quality</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Crisp Text</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Zero Server Upload</span>
+          </div>
+          <span class="text-xs font-bold text-blue-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Compress PDF →
+          </span>
+        </div>
+      </a>
+
+      <!-- Tool 4: Image to PDF -->
+      <a href="/img2pdf/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-violet-300 transition duration-200 flex flex-col justify-between" data-keywords="image to pdf img2pdf jpg png convert document scans assignment photos multi-image">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-violet-100 text-violet-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            📄
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-violet-600 transition">Image to PDF Converter</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Convert photos of handwritten homework, textbook notes, and IDs (JPG, PNG, WEBP) into a single, beautifully formatted PDF document.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Multi-Image</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Custom Margins</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">A4 / Letter</span>
+          </div>
+          <span class="text-xs font-bold text-violet-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Convert Images →
+          </span>
+        </div>
+      </a>
+
+      <!-- Tool 5: Merge PDF -->
+      <a href="/merge-pdf/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-300 transition duration-200 flex flex-col justify-between" data-keywords="merge pdf combine pdf join pdfs multiple reorder pages drag and drop">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            📑
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-amber-600 transition">Merge PDF Documents</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Combine multiple PDF chapters, certificates, or reports into one file. Reorder pages up and down with 1-click arrows and merge instantaneously.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">1-Click Reorder</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Instant Merge</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Lossless Stream</span>
+          </div>
+          <span class="text-xs font-bold text-amber-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Merge Files →
+          </span>
+        </div>
+      </a>
+
+      <!-- Tool 6: Text to PDF -->
+      <a href="/text2pdf/" class="tool-card group block bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-teal-300 transition duration-200 flex flex-col justify-between" data-keywords="text to pdf txt notes assignment code text formatter clean margins font">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition duration-200">
+            ✍️
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="font-bold text-slate-900 text-lg group-hover:text-teal-600 transition">Text to PDF Generator</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Turn typed notes, code snippets, or raw .txt files into clean, readable PDF documents with custom typography (Helvetica, Times, Courier).
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-semibold text-slate-500">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Font Selector</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Auto-Paging</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Direct .txt Ingestion</span>
+          </div>
+          <span class="text-xs font-bold text-teal-600 group-hover:translate-x-1 inline-flex items-center gap-1 transition">
+            Generate PDF →
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Privacy & Architecture Section -->
+  <section class="bg-white border-t border-b border-slate-200 py-16 px-4" id="privacy">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Why Students & Teachers Trust StudentDocs</h2>
+        <p class="text-sm text-slate-600">Built from the ground up on modern WebAssembly and JavaScript technologies to guarantee 100% data safety.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-4">
+            🔒
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">100% Client-Side Privacy</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Your marksheets, passport photos, and PDFs never travel across the internet. All processing happens locally in your device's memory.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mx-auto mb-4">
+            ⚡
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Lightning Fast & Offline Capable</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            No uploading or downloading queues. Once the page is loaded, calculations and file operations finish in milliseconds.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center text-2xl mx-auto mb-4">
+            💎
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Completely Free Forever</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            No limits, no "upgrade to pro" popups, and no watermarks stamped onto your homework or application documents.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-4xl mx-auto px-4 py-16" id="faq">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <h3 class="font-bold text-slate-900 text-base mb-1">Is StudentDocs really 100% free with no limits?</h3>
+        <p class="text-sm text-slate-600">Yes! There are no daily conversion caps, file size fees, or hidden premium subscriptions. All tools are open and free for students and educators.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <h3 class="font-bold text-slate-900 text-base mb-1">Are my uploaded documents safe from data leaks?</h3>
+        <p class="text-sm text-slate-600">Unlike other websites that upload your files to remote cloud servers, StudentDocs executes all algorithms directly inside your browser using client-side JavaScript. Your files never leave your computer or phone.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <h3 class="font-bold text-slate-900 text-base mb-1">Does the Smart Math Calculator work on mobile phones?</h3>
+        <p class="text-sm text-slate-600">Yes! The calculator features an adaptive touch-optimized number pad and organized tabs (Scientific, Equation Solver, Statistics, Calculus, and Converter) that work seamlessly on smartphones, tablets, and computers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-sm mt-auto py-10 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="flex items-center space-x-2 text-white font-bold text-lg mb-1">
+          <span>🎓</span> <span>StudentDocs</span>
+        </div>
+        <p class="text-xs text-slate-500">Accessible, zero-server-upload academic utilities for students worldwide.</p>
+      </div>
+      <div class="flex items-center space-x-6 text-xs">
+        <a href="#tools" class="hover:text-white transition">Tools</a>
+        <a href="#privacy" class="hover:text-white transition">Privacy</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="/llms.txt" class="hover:text-white transition">AI Docs (/llms.txt)</a>
+        <a href="/sitemap.xml" class="hover:text-white transition">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Filter Script -->
+  <script>
+    const searchInput = document.getElementById('toolSearch');
+    const cards = document.querySelectorAll('.tool-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.getAttribute('data-keywords') + ' ' + card.innerText.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

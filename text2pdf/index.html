@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Text to PDF Converter Online Free - Type, Paste & Convert | StudentDocs</title>
+  <meta name="title" content="Text to PDF Converter Online Free - Type, Paste & Convert | StudentDocs">
+  <meta name="description" content="Convert plain text, essays, lecture notes, or TXT files into clean, professional PDF documents. 100% free, private, with custom font, line spacing, and margin controls.">
+  <meta name="keywords" content="text to pdf, convert txt to pdf, online text to pdf converter, free note to pdf maker, essay to pdf, student notes converter">
+  <meta name="author" content="StudentDocs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://text2pdf.vercel.app/">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://text2pdf.vercel.app/">
+  <meta property="og:title" content="Free Text to PDF Converter - Type, Paste & Export Privately">
+  <meta property="og:description" content="Convert plain text, study notes, or essays into a clean PDF document. 100% private, zero server uploads, customizable fonts.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://text2pdf.vercel.app/">
+  <meta property="twitter:title" content="Free Text to PDF Converter - Type, Paste & Export Privately">
+  <meta property="twitter:description" content="Convert plain text, study notes, or essays into a clean PDF document. 100% private, zero server uploads, customizable fonts.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Structured Data (JSON-LD) for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://text2pdf.vercel.app/#webapp",
+        "name": "StudentDocs Text to PDF Converter",
+        "url": "https://text2pdf.vercel.app/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Convert plain text, essays, and notes directly into structured A4 PDF documents inside your browser without uploading to external servers."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://text2pdf.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I convert long essays or multi-page notes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The tool automatically handles pagination. Long text seamlessly breaks into consecutive A4 pages with proper margins and line wrapping."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data private and secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "100% private! Your text is rendered purely inside your local browser memory using client-side JavaScript. None of your sensitive notes or personal essays are sent to any remote server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I upload an existing .txt file from my computer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can either type/paste directly into the editor or click the 'Upload .txt file' button to load text instantly."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 hover:opacity-90 transition">
+        <div class="w-9 h-9 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          ✍️
+        </div>
+        <div>
+          <span class="text-xl font-bold text-slate-900 tracking-tight">StudentDocs</span>
+          <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold ml-1">Text2PDF</span>
+        </div>
+      </a>
+      <div class="flex items-center space-x-4 text-sm font-medium text-slate-600">
+        <a href="#how-it-works" class="hover:text-emerald-600 transition">How to Convert</a>
+        <a href="#faq" class="hover:text-emerald-600 transition">FAQ</a>
+        <span class="text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 100% Client-Side Private
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero & Tool Area -->
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+    
+    <!-- Title Area -->
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        Convert Text to PDF Online
+      </h1>
+      <p class="text-slate-600 text-base md:text-lg">
+        Type, paste your essay, study notes, or upload a .txt file and turn it into a clean, formatted A4 PDF. 100% free with custom fonts, margins, and zero server uploads.
+      </p>
+    </div>
+
+    <!-- The Interactive Tool Box (Card) -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8 mb-12">
+      
+      <!-- Formatting Toolbar -->
+      <div class="bg-slate-100 p-4 rounded-xl flex flex-wrap items-center justify-between gap-3 mb-4 border border-slate-200 text-sm">
+        
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Font Family -->
+          <div class="flex items-center gap-1.5">
+            <label for="fontFamily" class="font-semibold text-slate-700 text-xs">Font:</label>
+            <select id="fontFamily" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500">
+              <option value="helvetica" selected>Helvetica (Clean / Modern)</option>
+              <option value="times">Times New Roman (Academic)</option>
+              <option value="courier">Courier (Typewriter / Code)</option>
+            </select>
+          </div>
+
+          <!-- Font Size -->
+          <div class="flex items-center gap-1.5">
+            <label for="fontSize" class="font-semibold text-slate-700 text-xs">Size:</label>
+            <select id="fontSize" class="bg-white border border-slate-300 rounded-lg px-2 py-1.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500">
+              <option value="10">10 pt (Compact)</option>
+              <option value="12" selected>12 pt (Standard)</option>
+              <option value="14">14 pt (Large)</option>
+              <option value="16">16 pt (Heading)</option>
+            </select>
+          </div>
+
+          <!-- Line Spacing -->
+          <div class="flex items-center gap-1.5">
+            <label for="lineSpacing" class="font-semibold text-slate-700 text-xs">Spacing:</label>
+            <select id="lineSpacing" class="bg-white border border-slate-300 rounded-lg px-2 py-1.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500">
+              <option value="1.15" selected>1.15 (Standard)</option>
+              <option value="1.5">1.5 (Double Space)</option>
+            </select>
+          </div>
+
+          <!-- Margin -->
+          <div class="flex items-center gap-1.5">
+            <label for="pageMargin" class="font-semibold text-slate-700 text-xs">Margin:</label>
+            <select id="pageMargin" class="bg-white border border-slate-300 rounded-lg px-2 py-1.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500">
+              <option value="15" selected>Standard (15mm)</option>
+              <option value="25">Wide (25mm)</option>
+              <option value="10">Narrow (10mm)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Secondary Actions -->
+        <div class="flex items-center gap-2">
+          <input type="file" id="txtFileInput" accept=".txt" class="hidden">
+          <button id="uploadTxtBtn" class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold px-2.5 py-1.5 rounded-lg text-xs shadow-sm transition">
+            📂 Upload .txt
+          </button>
+          <button id="clearTextBtn" class="text-xs text-red-600 hover:text-red-700 font-semibold underline px-1">
+            Clear
+          </button>
+        </div>
+
+      </div>
+
+      <!-- PDF Document Title Input -->
+      <div class="mb-4 flex flex-wrap items-center justify-between gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <label for="docTitle" class="font-semibold text-slate-700 text-xs whitespace-nowrap">Document Title:</label>
+          <input type="text" id="docTitle" placeholder="e.g. History_Assignment_Notes" value="my_notes" class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500 w-full sm:w-60 font-medium">
+        </div>
+        <div class="text-xs text-slate-500 flex items-center gap-3">
+          <span>Words: <strong id="wordCount" class="text-slate-800">0</strong></span>
+          <span>Characters: <strong id="charCount" class="text-slate-800">0</strong></span>
+        </div>
+      </div>
+
+      <!-- Main Textarea Editor -->
+      <div class="relative mb-6">
+        <textarea id="textContent" rows="14" placeholder="Type or paste your text, notes, assignment essay, or code snippets here..." class="w-full p-4 border border-slate-300 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-slate-800 leading-relaxed font-sans transition resize-y"></textarea>
+      </div>
+
+      <!-- Action Button -->
+      <div class="text-center">
+        <button id="generatePdfBtn" class="w-full md:w-auto md:min-w-[280px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mx-auto text-base">
+          <span>📥 Download Formatted PDF</span>
+        </button>
+        <p id="statusMsg" class="text-xs text-slate-500 mt-2">Ready to compile text into A4 pages.</p>
+      </div>
+
+    </div>
+
+    <!-- AdSense Placeholder Banner -->
+    <div class="w-full bg-slate-100 border border-dashed border-slate-300 rounded-xl p-4 text-center text-xs text-slate-400 mb-12">
+      <span>Advertisement Space (Google AdSense Ready)</span>
+    </div>
+
+    <!-- Educational & Helpful Content (SEO & AdSense Hybrid Strategy) -->
+    <section id="how-it-works" class="prose max-w-none bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+      
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">How to Convert Text to a Professional PDF Document</h2>
+        <ol class="list-decimal list-inside space-y-2 text-slate-600 leading-relaxed">
+          <li><strong>Enter or paste your text:</strong> Paste your study notes, essay, or summary into the editor box above, or upload an existing <code>.txt</code> file directly.</li>
+          <li><strong>Customize typography:</strong> Select your preferred academic font (Helvetica, Times, or Courier), adjust font size, and pick line spacing.</li>
+          <li><strong>Download instantly:</strong> Click "Download Formatted PDF". The tool splits your paragraphs across clean A4 pages and downloads the finished PDF file straight to your downloads folder.</li>
+        </ol>
+      </div>
+
+      <hr class="border-slate-100">
+
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">Why Use StudentDocs Text to PDF Converter?</h2>
+        <div class="grid md:grid-cols-3 gap-6 not-prose mt-4">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-2">📄</div>
+            <h3 class="font-bold text-slate-800 text-base mb-1">Smart Auto-Pagination</h3>
+            <p class="text-sm text-slate-600">Never worry about text running off the page. The system calculates printable margins and creates clean page breaks automatically.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-2">🔒</div>
+            <h3 class="font-bold text-slate-800 text-base mb-1">Total Privacy</h3>
+            <p class="text-sm text-slate-600">Your essays, research drafts, and notes remain strictly on your machine. No server logs, no databases, 100% confidential.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-2">⚡</div>
+            <h3 class="font-bold text-slate-800 text-base mb-1">Zero Paywalls</h3>
+            <p class="text-sm text-slate-600">Unlimited word count with zero watermarks. Built specifically to help college students and teachers submit clean documents.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- FAQ Section -->
+      <div id="faq">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-semibold text-slate-900 text-base mb-1">Can I print the downloaded PDF directly?</h3>
+            <p class="text-sm text-slate-600">Yes! The output PDF uses standard ISO A4 paper dimensions with standard margins, making it 100% ready for home and commercial printing.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-semibold text-slate-900 text-base mb-1">Is there a maximum word limit?</h3>
+            <p class="text-sm text-slate-600">There is no strict word limit. You can convert short one-page memos as well as 10,000+ word dissertations seamlessly.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-semibold text-slate-900 text-base mb-1">Does this support programming code or logs?</h3>
+            <p class="text-sm text-slate-600">Yes! Switch the font to <strong>Courier</strong> to get a monospaced layout ideal for coding assignments, algorithm outputs, and data logs.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-sm mt-16 py-8 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-slate-300 font-semibold">StudentDocs — Text to PDF Online</p>
+        <p class="text-xs text-slate-500 mt-1">Free client-side typography & document tools for students and academics.</p>
+      </div>
+      <div class="flex items-center space-x-6 text-xs">
+        <a href="#how-it-works" class="hover:text-white transition">About</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="/llms.txt" class="hover:text-white transition">LLM Specs</a>
+        <a href="/sitemap.xml" class="hover:text-white transition">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic (Client-Side jsPDF) -->
+  <script>
+    const { jsPDF } = window.jspdf;
+
+    const textContent = document.getElementById('textContent');
+    const wordCount = document.getElementById('wordCount');
+    const charCount = document.getElementById('charCount');
+    const generatePdfBtn = document.getElementById('generatePdfBtn');
+    const uploadTxtBtn = document.getElementById('uploadTxtBtn');
+    const txtFileInput = document.getElementById('txtFileInput');
+    const clearTextBtn = document.getElementById('clearTextBtn');
+    const statusMsg = document.getElementById('statusMsg');
+
+    // Live Word & Char Counter
+    textContent.addEventListener('input', updateCounts);
+
+    function updateCounts() {
+      const text = textContent.value.trim();
+      charCount.textContent = text.length;
+      wordCount.textContent = text ? text.split(/\s+/).length : 0;
+    }
+
+    // Clear Text
+    clearTextBtn.addEventListener('click', () => {
+      textContent.value = '';
+      updateCounts();
+    });
+
+    // Upload .txt file
+    uploadTxtBtn.addEventListener('click', () => txtFileInput.click());
+
+    txtFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        textContent.value = event.target.result;
+        updateCounts();
+        statusMsg.textContent = `Loaded "${file.name}" successfully.`;
+      };
+      reader.readAsText(file);
+    });
+
+    // Generate & Download PDF
+    generatePdfBtn.addEventListener('click', () => {
+      const text = textContent.value.trim();
+      if (!text) {
+        alert('Please enter or paste some text before generating a PDF.');
+        return;
+      }
+
+      generatePdfBtn.disabled = true;
+      generatePdfBtn.innerHTML = `<span>⏳ Formatting PDF document...</span>`;
+
+      try {
+        const fontFamily = document.getElementById('fontFamily').value;
+        const fontSize = parseInt(document.getElementById('fontSize').value, 10);
+        const lineSpacingFactor = parseFloat(document.getElementById('lineSpacing').value);
+        const margin = parseInt(document.getElementById('pageMargin').value, 10);
+        const docTitle = (document.getElementById('docTitle').value || 'document').trim() + '.pdf';
+
+        const pdf = new jsPDF({
+          orientation: 'p',
+          unit: 'mm',
+          format: 'a4'
+        });
+
+        pdf.setFont(fontFamily);
+        pdf.setFontSize(fontSize);
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const printableWidth = pageWidth - (margin * 2);
+        const printableHeight = pageHeight - (margin * 2);
+
+        // Line height calculation in mm
+        const lineHeight = (fontSize * 0.352778) * lineSpacingFactor * 1.35;
+
+        // Split text into lines that fit the page width
+        const lines = pdf.splitTextToSize(text, printableWidth);
+
+        let cursorY = margin + (fontSize * 0.352778);
+
+        for (let i = 0; i < lines.length; i++) {
+          if (cursorY + lineHeight > pageHeight - margin) {
+            pdf.addPage();
+            cursorY = margin + (fontSize * 0.352778);
+          }
+          pdf.text(lines[i], margin, cursorY);
+          cursorY += lineHeight;
+        }
+
+        pdf.save(docTitle);
+        statusMsg.textContent = '✅ PDF generated and saved successfully!';
+      } catch (err) {
+        console.error(err);
+        statusMsg.textContent = '❌ An error occurred during PDF generation.';
+      } finally {
+        generatePdfBtn.disabled = false;
+        generatePdfBtn.innerHTML = `<span>📥 Download Formatted PDF</span>`;
+      }
+    });
+  </script>
+</body>
+</html>

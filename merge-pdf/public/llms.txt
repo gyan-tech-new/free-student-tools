@@ -1,0 +1,13 @@
+# StudentDocs Merge PDF Online
+
+> Free, 100% private, client-side PDF merger for students, colleges, and job applications.
+
+## Capabilities
+- Combines two or more PDF files into a single, organized PDF document.
+- Client-side execution using pdf-lib: zero server uploads, 100% local memory processing.
+- Re-order files via Up/Down buttons, inspect page counts, and download instantly.
+- Built specifically for student assignments, Aadhaar front/back PDF joining, and administrative documents.
+
+## Core URLs
+- Application Home: https://merge-pdf.vercel.app/
+- Sitemap: https://merge-pdf.vercel.app/sitemap.xml

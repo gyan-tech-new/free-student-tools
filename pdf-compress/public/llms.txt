@@ -1,0 +1,13 @@
+# StudentDocs PDF Compressor Online
+
+> Free, 100% private, client-side PDF file compressor designed specifically for students, teachers, and job applicants.
+
+## Capabilities
+- Reduce heavy PDF file sizes (assignments, textbooks, scanned certificates) down to uploadable limits (100 KB, 500 KB, 1 MB, 2 MB).
+- 3 Smart compression modes: Extreme Compression (lowest size), Recommended (balanced), and High Quality.
+- 100% client-side rasterization and PDF rebuilding: zero remote server uploads, complete data confidentiality.
+- Built specifically for college LMS, Google Classroom, and government job portal upload constraints.
+
+## Core URLs
+- Application Home: https://pdf-compress.vercel.app/
+- Sitemap: https://pdf-compress.vercel.app/sitemap.xml

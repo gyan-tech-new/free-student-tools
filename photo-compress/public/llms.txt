@@ -1,0 +1,13 @@
+# StudentDocs Photo & Signature Compressor for Govt Exams
+
+> Free, 100% private, client-side photo and signature image compressor designed specifically for Indian government job portals and college admissions (SSC, UPSC, Railway, IBPS, NEET, CUET).
+
+## Capabilities
+- Compress JPG, JPEG, and PNG photos to exact KB targets (20 KB, 50 KB, 100 KB) with precision sliders.
+- One-click presets for SSC / UPSC Photo (20-50 KB) and Signature (10-20 KB).
+- Custom pixel dimension resizing (3.5cm x 4.5cm passport standard, 350x450 px).
+- 100% client-side HTML5 Canvas processing: zero server uploads, 100% privacy for personal identity documents.
+
+## Core URLs
+- Application Home: https://photo-compress.vercel.app/
+- Sitemap: https://photo-compress.vercel.app/sitemap.xml
