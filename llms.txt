@@ -10,6 +10,12 @@
 - [Merge PDF Documents](https://free-student-tools.vercel.app/merge-pdf/): Combines multiple PDF files with intuitive page reordering into a single document using lossless client-side stream merging.
 - [Text to PDF Generator](https://free-student-tools.vercel.app/text2pdf/): Formats raw text notes or `.txt` files into downloadable PDF documents with custom fonts (Helvetica, Times, Courier).
 
+## Institutional & Trust Policies
+- [About StudentDocs](https://free-student-tools.vercel.app/about/): Project mission, architecture philosophy, and educational commitment.
+- [Privacy Policy](https://free-student-tools.vercel.app/privacy/): Comprehensive client-side data guarantee, cookie details, and zero-server retention policies.
+- [Terms of Service](https://free-student-tools.vercel.app/terms/): Educational acceptable use guidelines and disclaimers.
+- [Contact Support](https://free-student-tools.vercel.app/contact/): Community communication channel and direct feedback inbox.
+
 ## Privacy & Security Architecture
 - 100% Client-Side execution using WebAssembly, Canvas API, MathJS, PDF-Lib, and jsPDF.
 - No user documents or calculations are transmitted to external servers.
