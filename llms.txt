@@ -1,5 +1,5 @@
-# StudentDocs — Free & Private Academic Utility Suite
-> A fast, 100% client-side collection of online tools for students, researchers, and document preparation. Zero server uploads, zero watermarks, and unlimited free usage.
+# FreeDailyTools — 100% Free, Private Online Utilities Suite
+> An all-in-one, 100% client-side collection of online tools for students, content creators, finance calculations, and daily productivity. Zero server uploads, zero watermarks, and unlimited free usage.
 
 ## Available Tools
 
@@ -11,10 +11,10 @@
 - [Text to PDF Generator](https://free-student-tools.vercel.app/text2pdf/): Formats raw text notes or `.txt` files into downloadable PDF documents with custom fonts (Helvetica, Times, Courier).
 
 ## Institutional & Trust Policies
-- [About StudentDocs](https://free-student-tools.vercel.app/about/): Project mission, architecture philosophy, and educational commitment.
+- [About FreeDailyTools](https://free-student-tools.vercel.app/about/): Project mission, architecture philosophy, and educational commitment.
 - [Privacy Policy](https://free-student-tools.vercel.app/privacy/): Comprehensive client-side data guarantee, cookie details, and zero-server retention policies.
 - [Terms of Service](https://free-student-tools.vercel.app/terms/): Educational acceptable use guidelines and disclaimers.
 
 ## Privacy & Security Architecture
 - 100% Client-Side execution using WebAssembly, Canvas API, MathJS, PDF-Lib, and jsPDF.
-- No user documents or calculations are transmitted to external servers.
+- No user documents, calculations, or data are transmitted to external servers.
