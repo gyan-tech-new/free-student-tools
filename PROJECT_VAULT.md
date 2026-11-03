@@ -54,7 +54,8 @@
 
 ## 🛠️ 6. Live Tool Routes
 1. **Homepage / Portal**: `/`
-2. **Govt Exam Photo Resizer (20KB–50KB)**: `/photo-compress/`
+2. **Govt Exam Age Eligibility & Cutoff Calculator**: `/age-calculator/`
+3. **Govt Exam Photo Resizer (20KB–50KB)**: `/photo-compress/`
 3. **Smart Scientific Math Calculator**: `/math-calculator/`
 4. **144 DPI Crisp PDF Compressor**: `/pdf-compress/`
 5. **Image to PDF Converter**: `/img2pdf/`

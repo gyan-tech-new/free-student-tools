@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNB5P56TNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GNB5P56TNS');
+  </script>
+
+  <title>Govt Exam Age Calculator Online Free — Cutoff & Eligibility Checker | FreeDailyTools</title>
+  <meta name="description" content="Calculate your exact age in years, months, and days as on notification cutoff date. Instant eligibility checker for SSC CGL, UPSC, IBPS, Railways, Defence with OBC/SC/ST age relaxation. 100% Free & Private.">
+  <meta name="keywords" content="age calculator for govt exams, ssc age calculator, upsc age cutoff calculator, calculate age as on date, rrb age eligibility checker, age relaxation calculator, freedailytools">
+  <link rel="canonical" href="https://free-student-tools.vercel.app/age-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Govt Exam Age Calculator & Cutoff Checker — FreeDailyTools">
+  <meta property="og:description" content="Calculate exact age in years, months, and days as on exam cutoff date (SSC, UPSC, Railway, Bank). Instant eligibility with category relaxations.">
+  <meta property="og:url" content="https://free-student-tools.vercel.app/age-calculator/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Govt Exam Age Calculator & Cutoff Checker">
+  <meta name="twitter:description" content="Exact age in years, months, days for SSC, UPSC, and competitive exams with category relaxation. 100% client-side.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=630&fit=crop&q=80">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Govt Exam Age Calculator & Cutoff Checker",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "url": "https://free-student-tools.vercel.app/age-calculator/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "High-precision age calculator designed for Indian competitive government exams (SSC, UPSC, IBPS, Railways, Defence, State Police). Computes exact age down to days on specific notification cutoff dates with category-based age relaxation rules."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is age calculated for Indian government exams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In competitive exams like SSC, UPSC, and IBPS, age is calculated as on a specific crucial cutoff date mentioned in the official notification (typically 1st January or 1st August of the recruitment year). Your date of birth is subtracted from this crucial date to compute exact completed years, months, and days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the age relaxation for OBC, SC, and ST categories?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under Central Government recruitment rules, OBC (Non-Creamy Layer) candidates receive 3 years of upper age relaxation, SC and ST candidates receive 5 years, PwD candidates receive 10 years, and Ex-Servicemen receive deduction of military service plus 3 years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my birthday falls on the crucial cutoff date?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "According to Supreme Court guidelines and standard recruitment rules, a candidate completes an age year on the anniversary of their birth. If your birthday is on 1st August and the cutoff is 1st August, you are considered to have completed that exact year on that day."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .result-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2.5">
+        <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
+          ⚡
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight text-slate-900">FreeDaily<span class="text-indigo-600">Tools</span></span>
+          <span class="text-[10px] text-slate-500 block leading-tight font-medium">100% Free • Private • Fast</span>
+        </div>
+      </a>
+
+      <div class="flex items-center space-x-4 text-xs sm:text-sm font-semibold">
+        <a href="/" class="hover:text-indigo-600 transition text-slate-600">All Tools</a>
+        <a href="/photo-compress/" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">Photo Resizer</a>
+        <a href="/math-calculator/" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">Math Solver</a>
+        <span class="text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 border border-emerald-200 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          100% Client-Side
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Tool Section -->
+  <main class="flex-grow py-8 md:py-12 px-4 max-w-5xl mx-auto w-full">
+    
+    <!-- Title & AEO Definition Capsule -->
+    <div class="text-center max-w-3xl mx-auto mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold mb-4">
+        <span>🎯</span> Govt Exam Cutoff & Age Eligibility Solver
+      </div>
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        Govt Exam Age Calculator & Eligibility Checker
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        <strong>The Govt Exam Age Calculator</strong> by FreeDailyTools is a high-precision eligibility calculator for competitive Indian examinations (SSC CGL, CHSL, MTS, UPSC, IBPS, Railways, Defence, and State Police). It calculates your exact age in years, months, and days as on official notification cutoff dates, applying statutory category age relaxations (OBC, SC, ST, PwD, ESM) instantly without storing your data.
+      </p>
+    </div>
+
+    <!-- Main Calculator Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- Left Input Panel (7 Cols) -->
+      <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <span>📅</span> Enter Your Birth & Cutoff Details
+          </h2>
+          <p class="text-xs text-slate-500">Pick your date of birth and the cutoff date mentioned in the recruitment notification.</p>
+        </div>
+
+        <!-- Date of Birth -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">1. Your Date of Birth (DOB) *</label>
+          <input 
+            type="date" 
+            id="dobInput" 
+            class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 rounded-xl text-slate-900 font-semibold text-sm sm:text-base outline-none transition"
+            onchange="calculateAge()"
+          >
+        </div>
+
+        <!-- Cutoff Date (Age As On) -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">2. Calculate Age As On (Cutoff Date) *</label>
+            <span class="text-[11px] text-indigo-600 font-semibold cursor-pointer hover:underline" onclick="setCutoffToday()">Reset to Today</span>
+          </div>
+          <input 
+            type="date" 
+            id="cutoffInput" 
+            class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 rounded-xl text-slate-900 font-semibold text-sm sm:text-base outline-none transition"
+            onchange="calculateAge()"
+          >
+          
+          <!-- Quick Cutoff Presets -->
+          <div class="mt-2.5 flex flex-wrap items-center gap-1.5 text-xs">
+            <span class="text-slate-500 text-[11px] font-semibold">Common Exam Cutoffs:</span>
+            <button onclick="setCutoff('2026-08-01')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 border border-slate-200 text-slate-700 font-medium transition text-[11px]">01 Aug 2026</button>
+            <button onclick="setCutoff('2026-01-01')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 border border-slate-200 text-slate-700 font-medium transition text-[11px]">01 Jan 2026</button>
+            <button onclick="setCutoff('2025-08-01')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 border border-slate-200 text-slate-700 font-medium transition text-[11px]">01 Aug 2025</button>
+            <button onclick="setCutoff('2025-01-01')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 border border-slate-200 text-slate-700 font-medium transition text-[11px]">01 Jan 2025</button>
+          </div>
+        </div>
+
+        <!-- Exam & Category Eligibility Checker -->
+        <div class="pt-4 border-t border-slate-100 space-y-4">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 mb-1 flex items-center gap-1.5">
+              <span>🎯</span> Optional: Check Exam Eligibility
+            </h3>
+            <p class="text-xs text-slate-500">Select target exam and category to check whether you meet the age criteria.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5">Target Exam</label>
+              <select id="examSelect" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium outline-none focus:border-indigo-600 transition" onchange="calculateAge()">
+                <option value="none">-- General Calculation Only --</option>
+                <optgroup label="SSC Exams">
+                  <option value="ssc_cgl_30">SSC CGL (General Posts: 18 - 30 yrs)</option>
+                  <option value="ssc_cgl_27">SSC CGL (Inspector/Auditor: 18 - 27 yrs)</option>
+                  <option value="ssc_cgl_32">SSC CGL (JSO / Statistical: 18 - 32 yrs)</option>
+                  <option value="ssc_chsl">SSC CHSL 10+2 (18 - 27 yrs)</option>
+                  <option value="ssc_mts">SSC MTS & Havaldar (18 - 25 yrs)</option>
+                  <option value="ssc_gd">SSC GD Constable (18 - 23 yrs)</option>
+                </optgroup>
+                <optgroup label="Civil Services & Defence">
+                  <option value="upsc_cse">UPSC Civil Services CSE (21 - 32 yrs)</option>
+                  <option value="nda">NDA / Naval Academy (16.5 - 19.5 yrs)</option>
+                  <option value="cds">CDS Combined Defence (19 - 24 yrs)</option>
+                  <option value="afcat">AFCAT Flying Branch (20 - 24 yrs)</option>
+                </optgroup>
+                <optgroup label="Banking & Railways">
+                  <option value="ibps_po">IBPS / SBI PO (20 - 30 yrs)</option>
+                  <option value="ibps_clerk">IBPS / SBI Clerk (20 - 28 yrs)</option>
+                  <option value="rrb_ntpc">Railway RRB NTPC (18 - 30 yrs)</option>
+                  <option value="rrb_group_d">Railway Group D (18 - 33 yrs)</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5">Your Category</label>
+              <select id="categorySelect" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium outline-none focus:border-indigo-600 transition" onchange="calculateAge()">
+                <option value="0">General / UR / EWS (No Relaxation)</option>
+                <option value="3">OBC (Non-Creamy Layer) (+3 Years)</option>
+                <option value="5">SC / ST (+5 Years)</option>
+                <option value="10">PwD General (+10 Years)</option>
+                <option value="13">PwD + OBC (+13 Years)</option>
+                <option value="15">PwD + SC/ST (+15 Years)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="calculateAge()" class="w-full py-3.5 px-6 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold rounded-xl shadow-sm transition text-sm sm:text-base flex items-center justify-center gap-2">
+          <span>⚡ Calculate Exact Age & Check Eligibility</span>
+        </button>
+      </div>
+
+      <!-- Right Result Panel (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <!-- Primary Age Card -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm result-card" id="resultCard">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Exact Age Result</span>
+            <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full" id="cutoffLabel">As on Today</span>
+          </div>
+
+          <!-- Main Big Display -->
+          <div class="text-center py-4 bg-gradient-to-b from-indigo-50/50 to-white rounded-2xl border border-indigo-100/70 mb-5">
+            <div class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight" id="mainAgeDisplay">
+              -- <span class="text-xl font-medium text-slate-500">Years</span>
+            </div>
+            <div class="text-sm sm:text-base font-semibold text-slate-600 mt-2" id="subAgeDisplay">
+              Select DOB to calculate
+            </div>
+          </div>
+
+          <!-- Eligibility Verdict Box (Shown when exam selected) -->
+          <div id="verdictBox" class="hidden p-4 rounded-xl border mb-4 text-xs sm:text-sm font-semibold">
+            <!-- Injected via JS -->
+          </div>
+
+          <!-- Granular Stats Grid -->
+          <div class="grid grid-cols-2 gap-2.5 text-xs mb-4">
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Total Months</span>
+              <span class="font-extrabold text-slate-800 text-sm" id="statMonths">--</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Total Weeks</span>
+              <span class="font-extrabold text-slate-800 text-sm" id="statWeeks">--</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Total Days</span>
+              <span class="font-extrabold text-slate-800 text-sm" id="statDays">--</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Day of Birth</span>
+              <span class="font-extrabold text-slate-800 text-sm" id="statBornDay">--</span>
+            </div>
+          </div>
+
+          <!-- Next Birthday Countdown -->
+          <div class="p-3.5 bg-amber-50/70 rounded-xl border border-amber-200/80 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🎂</span>
+              <div>
+                <span class="font-bold text-amber-900 block">Next Birthday In</span>
+                <span class="text-amber-700" id="nextBirthdayText">-- days</span>
+              </div>
+            </div>
+            <span class="text-[11px] font-semibold text-amber-800" id="nextBirthdayDate">--</span>
+          </div>
+
+          <!-- 1-Click WhatsApp Share & Copy -->
+          <div class="pt-4 mt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-2">
+            <button onclick="shareOnWhatsApp()" class="flex-1 py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow-xs">
+              <span>📲 Share on WhatsApp</span>
+            </button>
+            <button onclick="copyResultSummary()" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition">
+              <span id="copyBtnText">📋 Copy Result</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Tips Callout -->
+        <div class="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100 text-xs text-slate-600 leading-relaxed">
+          <span class="font-bold text-indigo-900 block mb-1">💡 Govt Exam Rule Note:</span>
+          Most commission boards (SSC, UPSC) consider the candidate's age as on <strong>1st August</strong> for exams conducted in the second half of the year, and <strong>1st January</strong> for first-half notifications.
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Educational Guide & Thin-Content Defense (AdSense & E-E-A-T Compliant) -->
+    <article class="mt-16 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8 text-slate-700 leading-relaxed">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+          How Govt Exam Age Eligibility & Cutoff Dates Work in India
+        </h2>
+        <p class="text-sm sm:text-base">
+          Filling out application forms for competitive examinations such as <strong>SSC CGL, CHSL, MTS, UPSC Civil Services, IBPS Bank PO/Clerk, Railway RRB, and State Police</strong> requires precise age calculation. Even a discrepancy of a single day can lead to form rejection at the document verification (DV) stage.
+        </p>
+      </div>
+
+      <!-- Category Relaxation Table -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Central Government Statutory Age Relaxation Rules</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-100 text-slate-800 font-bold">
+              <tr>
+                <th class="p-3 border border-slate-200">Category</th>
+                <th class="p-3 border border-slate-200">Upper Age Relaxation</th>
+                <th class="p-3 border border-slate-200">Applicable Documents Required</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="p-3 font-semibold border border-slate-200">General / EWS</td>
+                <td class="p-3 border border-slate-200">No Relaxation</td>
+                <td class="p-3 border border-slate-200">Standard 10th / Matriculation Certificate</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="p-3 font-semibold border border-slate-200">OBC (Non-Creamy Layer)</td>
+                <td class="p-3 text-indigo-600 font-bold border border-slate-200">+3 Years</td>
+                <td class="p-3 border border-slate-200">Valid Central OBC Certificate (issued in financial year)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold border border-slate-200">SC / ST</td>
+                <td class="p-3 text-indigo-600 font-bold border border-slate-200">+5 Years</td>
+                <td class="p-3 border border-slate-200">Caste Certificate issued by competent revenue authority</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="p-3 font-semibold border border-slate-200">PwD (General / EWS)</td>
+                <td class="p-3 text-indigo-600 font-bold border border-slate-200">+10 Years</td>
+                <td class="p-3 border border-slate-200">Disability Certificate (minimum 40% benchmark disability)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold border border-slate-200">PwD + OBC (NCL)</td>
+                <td class="p-3 text-indigo-600 font-bold border border-slate-200">+13 Years</td>
+                <td class="p-3 border border-slate-200">Disability Certificate + Central OBC Certificate</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="p-3 font-semibold border border-slate-200">PwD + SC / ST</td>
+                <td class="p-3 text-indigo-600 font-bold border border-slate-200">+15 Years</td>
+                <td class="p-3 border border-slate-200">Disability Certificate + SC/ST Certificate</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold border border-slate-200">Ex-Servicemen (ESM)</td>
+                <td class="p-3 border border-slate-200">+3 Years after military service</td>
+                <td class="p-3 border border-slate-200">Discharge Certificate / Army Service Book</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Mathematical Calculation -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-2">How Our Algorithm Computes Exact Age</h3>
+        <p class="text-sm mb-3">
+          Our calculator implements the statutory Gregorian chronological calendar algorithm:
+        </p>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-slate-600">
+          <li><strong>Day Borrowing</strong>: If the cutoff day is smaller than the birth day, days from the preceding month are borrowed based on the exact month length (28, 29, 30, or 31 days).</li>
+          <li><strong>Month Borrowing</strong>: If the cutoff month is smaller than the birth month, 12 months are borrowed from the cutoff year.</li>
+          <li><strong>Leap Year Correction</strong>: Computes whether February 29th was crossed in leap cycles to ensure zero calculation drift over decades.</li>
+        </ol>
+      </div>
+
+      <!-- FAQ Section -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Frequently Asked Questions (FAQ)</h3>
+        <div class="space-y-3">
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              Which date is used as the proof of Date of Birth in government exams?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              In almost all Indian competitive examinations, the Date of Birth recorded in your <strong>Class 10th (Matriculation) or Secondary Education Board Certificate</strong> is accepted as conclusive proof. Birth certificates, Aadhaar cards, or affidavits are not accepted as substitute proof if they contradict the 10th marksheet.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              What is the meaning of "Crucial Date for Age Calculation"?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              The "Crucial Date" is the fixed benchmark date specified in recruitment rules against which candidate age is determined. Even if you submit your application on 20th August, your age is determined as of the notification's designated crucial date (e.g. 1st August 2026).
+            </p>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              Is age relaxation applicable to EWS (Economically Weaker Section) candidates?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              No. Under current Central Government recruitment policy, the 10% EWS reservation provides quota in vacancies and cutoffs, but does <strong>not</strong> grant age relaxation. EWS candidates must comply with the General/UR age limits.
+            </p>
+          </details>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-base">
+          ⚡
+        </div>
+        <span class="font-bold text-lg text-white">FreeDaily<span class="text-indigo-400">Tools</span></span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
+        <a href="/" class="hover:text-white transition">Home</a>
+        <a href="/about/" class="hover:text-white transition">About Us</a>
+        <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+        <a href="/terms/" class="hover:text-white transition">Terms of Service</a>
+      </div>
+
+      <div class="text-xs text-slate-500 text-center md:text-right">
+        <p>© 2026 FreeDailyTools. 100% Client-Side & Open Web.</p>
+        <p class="mt-0.5">Privacy First • Zero Server Uploads • Free Forever</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Age Calculation Logic -->
+  <script>
+    // Initialize default cutoff to today
+    window.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      document.getElementById('cutoffInput').value = `${yyyy}-${mm}-${dd}`;
+      
+      // Default DOB to a reasonable young adult example (e.g., 2002-05-15)
+      document.getElementById('dobInput').value = '2002-05-15';
+      calculateAge();
+    });
+
+    function setCutoffToday() {
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      document.getElementById('cutoffInput').value = `${yyyy}-${mm}-${dd}`;
+      calculateAge();
+    }
+
+    function setCutoff(dateStr) {
+      document.getElementById('cutoffInput').value = dateStr;
+      calculateAge();
+    }
+
+    let calculatedSummary = {};
+
+    function calculateAge() {
+      const dobVal = document.getElementById('dobInput').value;
+      const cutoffVal = document.getElementById('cutoffInput').value;
+
+      if (!dobVal || !cutoffVal) return;
+
+      const dob = new Date(dobVal + 'T00:00:00');
+      const cutoff = new Date(cutoffVal + 'T00:00:00');
+
+      if (cutoff < dob) {
+        document.getElementById('mainAgeDisplay').innerHTML = '<span class="text-rose-600 text-2xl font-bold">Invalid Dates</span>';
+        document.getElementById('subAgeDisplay').innerText = 'Cutoff date cannot be before Birth date';
+        document.getElementById('verdictBox').classList.add('hidden');
+        return;
+      }
+
+      let yDiff = cutoff.getFullYear() - dob.getFullYear();
+      let mDiff = cutoff.getMonth() - dob.getMonth();
+      let dDiff = cutoff.getDate() - dob.getDate();
+
+      if (dDiff < 0) {
+        // Borrow days from previous month
+        const prevMonthDate = new Date(cutoff.getFullYear(), cutoff.getMonth(), 0);
+        dDiff += prevMonthDate.getDate();
+        mDiff--;
+      }
+
+      if (mDiff < 0) {
+        mDiff += 12;
+        yDiff--;
+      }
+
+      // Total granular calculations
+      const diffTime = Math.abs(cutoff - dob);
+      const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      const totalWeeks = Math.floor(totalDays / 7);
+      const remainingDaysOfWeek = totalDays % 7;
+      const totalMonthsApprox = (yDiff * 12) + mDiff;
+
+      // Day born
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const bornDay = daysOfWeek[dob.getDay()];
+
+      // Next Birthday
+      let nextBday = new Date(cutoff.getFullYear(), dob.getMonth(), dob.getDate());
+      if (nextBday < cutoff) {
+        nextBday = new Date(cutoff.getFullYear() + 1, dob.getMonth(), dob.getDate());
+      }
+      const bdayDiffTime = nextBday - cutoff;
+      const daysToNextBday = Math.ceil(bdayDiffTime / (1000 * 60 * 60 * 24));
+      const nextBdayFormatted = nextBday.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+      // Update UI
+      document.getElementById('mainAgeDisplay').innerHTML = `${yDiff} <span class="text-xl font-medium text-slate-500">Years</span>`;
+      document.getElementById('subAgeDisplay').innerText = `${mDiff} Months, ${dDiff} Days`;
+
+      const cutoffFormatted = cutoff.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+      document.getElementById('cutoffLabel').innerText = `As on ${cutoffFormatted}`;
+
+      document.getElementById('statMonths').innerText = `${totalMonthsApprox} Months`;
+      document.getElementById('statWeeks').innerText = `${totalWeeks}w ${remainingDaysOfWeek}d`;
+      document.getElementById('statDays').innerText = `${totalDays.toLocaleString('en-IN')} Days`;
+      document.getElementById('statBornDay').innerText = bornDay;
+
+      document.getElementById('nextBirthdayText').innerText = daysToNextBday === 0 ? 'Today! 🎂' : `${daysToNextBday} days left`;
+      document.getElementById('nextBirthdayDate').innerText = nextBdayFormatted;
+
+      // Save summary for WhatsApp / Copy
+      calculatedSummary = {
+        years: yDiff,
+        months: mDiff,
+        days: dDiff,
+        cutoffDate: cutoffFormatted,
+        totalDays: totalDays
+      };
+
+      // Check Exam Eligibility
+      checkExamEligibility(yDiff, mDiff, dDiff);
+    }
+
+    function checkExamEligibility(years, months, days) {
+      const exam = document.getElementById('examSelect').value;
+      const relaxation = parseInt(document.getElementById('categorySelect').value, 10) || 0;
+      const verdictBox = document.getElementById('verdictBox');
+
+      if (exam === 'none') {
+        verdictBox.classList.add('hidden');
+        return;
+      }
+
+      // Exam Age Criteria Rules: [minAge, maxAge, examName]
+      const examRules = {
+        'ssc_cgl_30': [18, 30, 'SSC CGL (General Posts)'],
+        'ssc_cgl_27': [18, 27, 'SSC CGL (Inspector/Auditor)'],
+        'ssc_cgl_32': [18, 32, 'SSC CGL (JSO / Statistical)'],
+        'ssc_chsl': [18, 27, 'SSC CHSL 10+2'],
+        'ssc_mts': [18, 25, 'SSC MTS & Havaldar'],
+        'ssc_gd': [18, 23, 'SSC GD Constable'],
+        'upsc_cse': [21, 32, 'UPSC Civil Services (IAS/IPS)'],
+        'nda': [16.5, 19.5, 'NDA / Naval Academy'],
+        'cds': [19, 24, 'CDS Combined Defence'],
+        'afcat': [20, 24, 'AFCAT Flying Branch'],
+        'ibps_po': [20, 30, 'IBPS / SBI PO'],
+        'ibps_clerk': [20, 28, 'IBPS / SBI Clerk'],
+        'rrb_ntpc': [18, 30, 'Railway RRB NTPC'],
+        'rrb_group_d': [18, 33, 'Railway Group D']
+      };
+
+      const rule = examRules[exam];
+      if (!rule) return;
+
+      const [minAge, baseMax, examTitle] = rule;
+      const effectiveMax = baseMax + relaxation;
+      const ageDecimal = years + (months / 12) + (days / 365.25);
+
+      verdictBox.classList.remove('hidden');
+
+      if (ageDecimal < minAge) {
+        const neededYears = minAge - years;
+        verdictBox.className = 'p-4 rounded-xl border bg-amber-50 border-amber-200 text-amber-900 mb-4 text-xs sm:text-sm font-medium';
+        verdictBox.innerHTML = `
+          <div class="font-bold flex items-center gap-1.5 text-amber-800 text-sm mb-1">
+            <span>🟡</span> Underage for ${examTitle}
+          </div>
+          <p>Required age is <strong>${minAge} to ${effectiveMax} years</strong> (including your +${relaxation} yrs relaxation). You will become eligible in approximately <strong>${neededYears} year(s)</strong>.</p>
+        `;
+      } else if (ageDecimal > effectiveMax) {
+        const overYears = (ageDecimal - effectiveMax).toFixed(1);
+        verdictBox.className = 'p-4 rounded-xl border bg-rose-50 border-rose-200 text-rose-900 mb-4 text-xs sm:text-sm font-medium';
+        verdictBox.innerHTML = `
+          <div class="font-bold flex items-center gap-1.5 text-rose-800 text-sm mb-1">
+            <span>🔴</span> Overage for ${examTitle}
+          </div>
+          <p>Allowed maximum age with category relaxation is <strong>${effectiveMax} years</strong>. You have exceeded the limit by approximately <strong>${overYears} year(s)</strong>.</p>
+        `;
+      } else {
+        const remainingBufferYears = Math.floor(effectiveMax - years);
+        verdictBox.className = 'p-4 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-900 mb-4 text-xs sm:text-sm font-medium';
+        verdictBox.innerHTML = `
+          <div class="font-bold flex items-center gap-1.5 text-emerald-800 text-sm mb-1">
+            <span>🟢</span> 100% ELIGIBLE for ${examTitle}!
+          </div>
+          <p>You meet the age criteria (Allowed: <strong>${minAge} to ${effectiveMax} years</strong>). You still have approx <strong>${remainingBufferYears} year(s)</strong> before reaching the upper age limit!</p>
+        `;
+      }
+    }
+
+    function shareOnWhatsApp() {
+      if (!calculatedSummary.years) return;
+      const text = `🎯 *Govt Exam Age Calculator Result*:
+As on *${calculatedSummary.cutoffDate}*, my exact age is:
+👉 *${calculatedSummary.years} Years, ${calculatedSummary.months} Months, ${calculatedSummary.days} Days* (${calculatedSummary.totalDays} Total Days).
+
+Check your exact age and exam eligibility (SSC, UPSC, Railway, Bank) here:
+https://free-student-tools.vercel.app/age-calculator/`;
+
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function copyResultSummary() {
+      if (!calculatedSummary.years) return;
+      const text = `Govt Exam Age Calculator Result:
+As on ${calculatedSummary.cutoffDate}: ${calculatedSummary.years} Years, ${calculatedSummary.months} Months, ${calculatedSummary.days} Days.
+Check here: https://free-student-tools.vercel.app/age-calculator/`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtnText');
+        btn.innerText = '✔ Copied!';
+        setTimeout(() => { btn.innerText = '📋 Copy Result'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
