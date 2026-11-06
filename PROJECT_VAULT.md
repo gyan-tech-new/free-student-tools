@@ -9,6 +9,7 @@
 - **Brand Name**: FreeDailyTools
 - **Hosting Platform**: Vercel (Auto-deploys from GitHub `main` branch)
 - **Deployment Latency**: ~10–15 seconds on git push
+- **STRICT DEPLOYMENT GATE**: NEVER run `git push origin main` or deploy to Vercel without prior, explicit confirmation from the user. All work must be developed and reviewed locally first.
 
 ---
 
@@ -54,7 +55,8 @@
 
 ## 🛠️ 6. Live Tool Routes
 1. **Homepage / Portal**: `/`
-2. **Govt Exam Age Eligibility & Cutoff Calculator**: `/age-calculator/`
+2. **College 75% Attendance & Bunk Planner**: `/attendance-planner/`
+3. **Govt Exam Age Eligibility & Cutoff Calculator**: `/age-calculator/`
 3. **Govt Exam Photo Resizer (20KB–50KB)**: `/photo-compress/`
 3. **Smart Scientific Math Calculator**: `/math-calculator/`
 4. **144 DPI Crisp PDF Compressor**: `/pdf-compress/`

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNB5P56TNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GNB5P56TNS');
+  </script>
+
+  <title>College 75% Attendance & Bunk Planner Online Free — FreeDailyTools</title>
+  <meta name="description" content="Calculate your college attendance percentage and plan your bunks. Find out how many consecutive classes you need to attend for 75% or how many classes you can safely bunk. 100% Free & Private.">
+  <meta name="keywords" content="attendance calculator, 75 percent attendance calculator, college bunk planner, how many classes to attend for 75, attendance tracker online, freedailytools">
+  <link rel="canonical" href="https://free-student-tools.vercel.app/attendance-planner/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="College 75% Attendance & Bunk Planner — FreeDailyTools">
+  <meta property="og:description" content="Find out exactly how many classes you need to attend for 75% attendance or how many classes you can safely bunk. Free & 100% private.">
+  <meta property="og:url" content="https://free-student-tools.vercel.app/attendance-planner/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=630&fit=crop&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="College 75% Attendance & Bunk Planner">
+  <meta name="twitter:description" content="Calculate consecutive classes needed for 75% or safe bunks remaining. 100% client-side.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=630&fit=crop&q=80">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "College 75% Attendance & Bunk Planner",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "url": "https://free-student-tools.vercel.app/attendance-planner/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Student attendance calculator and bunk planner for college and university students. Solves how many classes to attend to reach mandatory 75% criteria or how many classes can be safely skipped."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is 75% attendance calculated in college?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Attendance percentage is calculated using the formula: (Total Classes Attended / Total Classes Conducted) * 100. If your attendance is below 75%, the number of extra consecutive classes you must attend is calculated using the formula: ceil((0.75 * Total Classes - Attended Classes) / 0.25)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many classes can I bunk if I have more than 75% attendance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If your attendance is above 75%, the maximum number of classes you can safely skip without dropping below 75% is given by: floor((Attended Classes - 0.75 * Total Classes) / 0.75)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does medical leave count towards the 75% attendance rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most universities (such as AKTU, VTU, Mumbai University, and Delhi University) allow attendance condonation on genuine medical grounds, lowering the mandatory threshold from 75% down to 60% or 65% upon submission of a certified medical certificate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gauge-circle {
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2.5">
+        <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
+          ⚡
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight text-slate-900">FreeDaily<span class="text-indigo-600">Tools</span></span>
+          <span class="text-[10px] text-slate-500 block leading-tight font-medium">100% Free • Private • Fast</span>
+        </div>
+      </a>
+
+      <div class="flex items-center space-x-4 text-xs sm:text-sm font-semibold">
+        <a href="/" class="hover:text-indigo-600 transition text-slate-600">All Tools</a>
+        <a href="/age-calculator/" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">Age Calculator</a>
+        <a href="/photo-compress/" class="hover:text-indigo-600 transition hidden sm:inline text-slate-600">Photo Resizer</a>
+        <span class="text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 border border-emerald-200 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          100% Client-Side
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="flex-grow py-8 md:py-12 px-4 max-w-5xl mx-auto w-full">
+    
+    <!-- Title & AEO Definition Capsule -->
+    <div class="text-center max-w-3xl mx-auto mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold mb-4">
+        <span>🎓</span> College 75% Attendance & Bunk Planner
+      </div>
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        College Attendance & Bunk Planner
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        <strong>The College Attendance & Bunk Planner</strong> by FreeDailyTools is a student utility that computes your current attendance percentage and answers the two most critical college questions: how many consecutive classes you must attend to cross the mandatory 75% criteria, or how many upcoming classes you can safely bunk without dropping below the detention threshold.
+      </p>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="flex justify-center mb-6">
+      <div class="inline-flex p-1 bg-slate-200 rounded-xl text-xs sm:text-sm font-bold">
+        <button id="tabQuickBtn" onclick="switchMode('quick')" class="px-4 py-2 rounded-lg bg-white text-slate-900 shadow-xs transition">
+          ⚡ Quick Calculator
+        </button>
+        <button id="tabSubjectBtn" onclick="switchMode('subject')" class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition">
+          📚 Subject-Wise Tracker
+        </button>
+      </div>
+    </div>
+
+    <!-- MODE 1: Quick Calculator Grid -->
+    <div id="quickMode" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left Input Form (7 Cols) -->
+      <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <span>📝</span> Enter Class Attendance Numbers
+          </h2>
+          <p class="text-xs text-slate-500">Put in your total classes conducted and how many you attended.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Total Classes -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Total Classes Held *</label>
+            <input 
+              type="number" 
+              id="totalClassesInput" 
+              min="1" 
+              value="60" 
+              class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 rounded-xl text-slate-900 font-bold text-lg outline-none transition"
+              oninput="calculateAttendance()"
+            >
+          </div>
+
+          <!-- Classes Attended -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Classes Attended *</label>
+            <input 
+              type="number" 
+              id="attendedClassesInput" 
+              min="0" 
+              value="42" 
+              class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 rounded-xl text-slate-900 font-bold text-lg outline-none transition"
+              oninput="calculateAttendance()"
+            >
+          </div>
+        </div>
+
+        <!-- Target Attendance Percentage -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Target Criteria Percentage</label>
+            <span class="text-xs font-bold text-indigo-600" id="targetPercentLabel">75%</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="setTarget(65)" class="target-btn px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-bold hover:border-indigo-500 transition" data-target="65">65%</button>
+            <button onclick="setTarget(70)" class="target-btn px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-bold hover:border-indigo-500 transition" data-target="70">70%</button>
+            <button onclick="setTarget(75)" class="target-btn px-3 py-1.5 rounded-lg border-2 border-indigo-600 bg-indigo-50 text-indigo-700 text-xs font-bold shadow-xs transition" data-target="75">75% (Standard)</button>
+            <button onclick="setTarget(80)" class="target-btn px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-bold hover:border-indigo-500 transition" data-target="80">80%</button>
+            <button onclick="setTarget(85)" class="target-btn px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-bold hover:border-indigo-500 transition" data-target="85">85%</button>
+          </div>
+        </div>
+
+        <!-- Quick Class Action Incrementers -->
+        <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs">
+          <span class="text-slate-500 text-xs font-semibold self-center">Quick Adjust:</span>
+          <button onclick="adjustClass(1, 1)" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 rounded-lg font-bold transition">+1 Attended</button>
+          <button onclick="adjustClass(1, 0)" class="px-3 py-1.5 bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200 rounded-lg font-bold transition">+1 Bunked</button>
+          <button onclick="resetDefaults()" class="px-3 py-1.5 bg-slate-100 text-slate-600 hover:bg-slate-200 rounded-lg font-semibold transition ml-auto">Reset</button>
+        </div>
+      </div>
+
+      <!-- Right Result Panel (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <!-- Result Card -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+          
+          <div class="flex justify-between items-center pb-3 border-b border-slate-100 mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Current Status</span>
+            <span id="statusBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">Calculating...</span>
+          </div>
+
+          <!-- Circular Radial Progress Gauge -->
+          <div class="relative w-40 h-40 mx-auto my-2 flex items-center justify-center">
+            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
+              <circle id="gaugeCircle" cx="50" cy="50" r="42" fill="transparent" stroke="#4f46e5" stroke-width="12" stroke-dasharray="264" stroke-dashoffset="66" stroke-linecap="round" class="gauge-circle"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span id="currentPercentDisplay" class="text-3xl font-extrabold text-slate-900 tracking-tight">70.0%</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Attendance</span>
+            </div>
+          </div>
+
+          <!-- Primary Bunk / Attend Verdict Box -->
+          <div id="verdictCallout" class="p-4 rounded-xl border my-4 text-xs sm:text-sm font-semibold leading-relaxed">
+            <!-- Injected via JS -->
+          </div>
+
+          <!-- Detailed Numbers Breakdown -->
+          <div class="grid grid-cols-2 gap-2 text-xs mb-4 text-left">
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Classes Attended</span>
+              <span class="font-bold text-slate-800 text-sm" id="statAttended">42 / 60</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <span class="text-slate-400 block text-[10px] font-bold uppercase">Classes Bunked</span>
+              <span class="font-bold text-slate-800 text-sm" id="statBunked">18 Classes</span>
+            </div>
+          </div>
+
+          <!-- 1-Click WhatsApp Share & Copy -->
+          <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-slate-100">
+            <button onclick="shareAttendanceWhatsApp()" class="flex-1 py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow-xs">
+              <span>📲 Share on WhatsApp</span>
+            </button>
+            <button onclick="copyAttendanceSummary()" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition">
+              <span id="copyAttendanceText">📋 Copy</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MODE 2: Subject-Wise Tracker (Initially Hidden) -->
+    <div id="subjectMode" class="hidden bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <span>📚</span> Subject-Wise Attendance Tracker
+          </h2>
+          <p class="text-xs text-slate-500">Track each semester subject individually. Data stays saved on your device (LocalStorage).</p>
+        </div>
+        <button onclick="addSubjectRow()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 self-start sm:self-auto">
+          <span>+ Add Subject</span>
+        </button>
+      </div>
+
+      <!-- Subjects Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse" id="subjectsTable">
+          <thead>
+            <tr class="border-b border-slate-200 text-slate-500 font-bold text-[11px] uppercase tracking-wider">
+              <th class="py-3 px-2">Subject Name</th>
+              <th class="py-3 px-2">Attended</th>
+              <th class="py-3 px-2">Total Held</th>
+              <th class="py-3 px-2">%</th>
+              <th class="py-3 px-2">Verdict (For 75%)</th>
+              <th class="py-3 px-2 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="subjectsBody" class="divide-y divide-slate-100">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Subject Aggregate Summary Card -->
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold">
+        <div class="flex items-center gap-4">
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Total Attended</span>
+            <span id="aggAttended" class="text-base font-extrabold text-slate-900">0</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Total Held</span>
+            <span id="aggTotal" class="text-base font-extrabold text-slate-900">0</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px] uppercase font-bold">Overall Percentage</span>
+            <span id="aggPercent" class="text-base font-extrabold text-indigo-600">0.0%</span>
+          </div>
+        </div>
+        <button onclick="clearSubjectData()" class="text-rose-600 hover:underline text-xs font-semibold">Clear All Subjects</button>
+      </div>
+    </div>
+
+    <!-- Educational Guide & Thin Content Defense (1,000+ Words) -->
+    <article class="mt-16 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8 text-slate-700 leading-relaxed">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+          The Mathematics of the 75% College Attendance Rule
+        </h2>
+        <p class="text-sm sm:text-base">
+          Under regulations set forth by the <strong>University Grants Commission (UGC)</strong>, <strong>All India Council for Technical Education (AICTE)</strong>, and major engineering and degree institutions (AKTU, VTU, Mumbai University, Anna University, Delhi University, and IPU), students are required to maintain a mandatory minimum of <strong>75% attendance</strong> across lectures, tutorials, and laboratory sessions to appear in semester examinations.
+        </p>
+      </div>
+
+      <!-- Mathematical Formulas -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">The Mathematical Equations Behind Bunk Planning</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-5 bg-indigo-50/50 rounded-xl border border-indigo-100">
+            <h4 class="font-bold text-indigo-900 text-sm mb-2">1. When Attendance is Below 75% (Catch-Up Formula)</h4>
+            <p class="text-xs text-slate-600 mb-3">
+              If your current percentage is below the target, attending 1 class increases both attended and total classes equally. To find consecutive classes \(x\) needed:
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-indigo-200 text-xs font-mono text-indigo-800 font-bold text-center">
+              x = Math.ceil( (0.75 * Total - Attended) / (1 - 0.75) )
+            </div>
+          </div>
+
+          <div class="p-5 bg-emerald-50/50 rounded-xl border border-emerald-100">
+            <h4 class="font-bold text-emerald-900 text-sm mb-2">2. When Attendance is Above 75% (Safe Bunk Formula)</h4>
+            <p class="text-xs text-slate-600 mb-3">
+              If your percentage is above 75%, bunking 1 class increases the total classes while attended classes remain unchanged. To find safe skips \(y\):
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-emerald-200 text-xs font-mono text-emerald-800 font-bold text-center">
+              y = Math.floor( (Attended - 0.75 * Total) / 0.75 )
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Worked Numerical Example -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Step-by-Step Worked Example</h3>
+        <p class="text-sm mb-3">
+          Suppose your college has conducted <strong>60 lectures</strong> and you have attended <strong>42 lectures</strong>:
+        </p>
+        <ul class="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-slate-600">
+          <li><strong>Current Percentage</strong>: \((42 / 60) \times 100 = \mathbf{70.0\%}\) (Below 75%).</li>
+          <li><strong>Target Needed</strong>: \(0.75 \times 60 = 45\) classes.</li>
+          <li><strong>Deficit</strong>: \(45 - 42 = 3\) classes.</li>
+          <li><strong>Consecutive Classes Needed</strong>: \(3 / (1 - 0.75) = 3 / 0.25 = \mathbf{12}\) classes.</li>
+          <li><strong>Verification</strong>: If you attend 12 more classes, your new attended is \(42 + 12 = 54\), and new total is \(60 + 12 = 72\). Your attendance becomes \((54 / 72) \times 100 = \mathbf{75.0\%}\)!</li>
+        </ul>
+      </div>
+
+      <!-- FAQ Section -->
+      <div>
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Frequently Asked Questions (FAQ)</h3>
+        <div class="space-y-3">
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              What happens if my attendance drops below 75%?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              Students whose attendance falls below the prescribed statutory limit (typically 75%) without sanctioned medical or extracurricular leave may be placed on the "Detained / Debarred List" and barred from sitting in end-semester theory and practical exams.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              Can I get condonation for medical reasons or sports?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              Yes. Most Indian universities permit the Head of Department (HOD) or Principal to condone shortage of attendance up to 10% (lowering the threshold from 75% down to 65%) for genuine hospitalization, medical illness, or representation of the university in national sports or NCC/NSS camps.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-xl border border-slate-200 group">
+            <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
+              Is attendance calculated per subject or in aggregate?
+              <span class="text-indigo-600 group-open:rotate-45 transition transform text-base font-bold">+</span>
+            </summary>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              This varies by university. In institutions like Mumbai University and VTU, candidates must maintain 75% in each individual subject or lab separately. In other institutions like Delhi University, an aggregate 67% to 75% across all semester subjects is evaluated.
+            </p>
+          </details>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-base">
+          ⚡
+        </div>
+        <span class="font-bold text-lg text-white">FreeDaily<span class="text-indigo-400">Tools</span></span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
+        <a href="/" class="hover:text-white transition">Home</a>
+        <a href="/about/" class="hover:text-white transition">About Us</a>
+        <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+        <a href="/terms/" class="hover:text-white transition">Terms of Service</a>
+      </div>
+
+      <div class="text-xs text-slate-500 text-center md:text-right">
+        <p>© 2026 FreeDailyTools. 100% Client-Side & Open Web.</p>
+        <p class="mt-0.5">Privacy First • Zero Server Uploads • Free Forever</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Attendance Calculation & Tracker Logic -->
+  <script>
+    let targetPercent = 75;
+    let currentCalcData = {};
+
+    function switchMode(mode) {
+      const qMode = document.getElementById('quickMode');
+      const sMode = document.getElementById('subjectMode');
+      const qBtn = document.getElementById('tabQuickBtn');
+      const sBtn = document.getElementById('tabSubjectBtn');
+
+      if (mode === 'quick') {
+        qMode.classList.remove('hidden');
+        sMode.classList.add('hidden');
+        qBtn.className = 'px-4 py-2 rounded-lg bg-white text-slate-900 shadow-xs transition';
+        sBtn.className = 'px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition';
+      } else {
+        qMode.classList.add('hidden');
+        sMode.classList.remove('hidden');
+        sBtn.className = 'px-4 py-2 rounded-lg bg-white text-slate-900 shadow-xs transition';
+        qBtn.className = 'px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition';
+        renderSubjects();
+      }
+    }
+
+    function setTarget(pct) {
+      targetPercent = pct;
+      document.getElementById('targetPercentLabel').innerText = `${pct}%`;
+      document.querySelectorAll('.target-btn').forEach(btn => {
+        if (parseInt(btn.dataset.target, 10) === pct) {
+          btn.className = 'target-btn px-3 py-1.5 rounded-lg border-2 border-indigo-600 bg-indigo-50 text-indigo-700 text-xs font-bold shadow-xs transition';
+        } else {
+          btn.className = 'target-btn px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-xs font-bold hover:border-indigo-500 transition text-slate-700';
+        }
+      });
+      calculateAttendance();
+    }
+
+    function adjustClass(totalDelta, attendedDelta) {
+      const tInput = document.getElementById('totalClassesInput');
+      const aInput = document.getElementById('attendedClassesInput');
+      let t = parseInt(tInput.value, 10) || 0;
+      let a = parseInt(aInput.value, 10) || 0;
+
+      t += totalDelta;
+      a += attendedDelta;
+      if (t < 1) t = 1;
+      if (a < 0) a = 0;
+      if (a > t) a = t;
+
+      tInput.value = t;
+      aInput.value = a;
+      calculateAttendance();
+    }
+
+    function resetDefaults() {
+      document.getElementById('totalClassesInput').value = 60;
+      document.getElementById('attendedClassesInput').value = 42;
+      setTarget(75);
+    }
+
+    function calculateAttendance() {
+      const total = parseInt(document.getElementById('totalClassesInput').value, 10);
+      const attended = parseInt(document.getElementById('attendedClassesInput').value, 10);
+      const verdictCallout = document.getElementById('verdictCallout');
+      const statusBadge = document.getElementById('statusBadge');
+      const gaugeCircle = document.getElementById('gaugeCircle');
+      const currentPercentDisplay = document.getElementById('currentPercentDisplay');
+
+      if (isNaN(total) || isNaN(attended) || total <= 0) {
+        currentPercentDisplay.innerText = '--%';
+        return;
+      }
+
+      if (attended > total) {
+        verdictCallout.className = 'p-4 rounded-xl border bg-rose-50 border-rose-200 text-rose-900 text-xs font-medium';
+        verdictCallout.innerHTML = 'Attended classes cannot be greater than total classes held!';
+        return;
+      }
+
+      const percent = (attended / total) * 100;
+      const roundedPercent = percent.toFixed(1);
+      const targetDecimal = targetPercent / 100;
+
+      currentPercentDisplay.innerText = `${roundedPercent}%`;
+      document.getElementById('statAttended').innerText = `${attended} / ${total}`;
+      document.getElementById('statBunked').innerText = `${total - attended} Classes`;
+
+      // Gauge Circle Circumference = 2 * PI * 42 = 263.89 ~ 264
+      const circumference = 264;
+      const progress = Math.min(percent / 100, 1);
+      const strokeOffset = circumference - (progress * circumference);
+      gaugeCircle.style.strokeDashoffset = strokeOffset;
+
+      currentCalcData = {
+        percent: roundedPercent,
+        total: total,
+        attended: attended,
+        target: targetPercent
+      };
+
+      if (percent >= targetPercent) {
+        // Safe Zone / Bunk calculation
+        // y = floor((attended - targetDecimal * total) / targetDecimal)
+        const canBunk = Math.floor((attended - (targetDecimal * total)) / targetDecimal);
+        currentCalcData.actionType = 'bunk';
+        currentCalcData.bunkCount = canBunk;
+
+        gaugeCircle.style.stroke = '#22c55e'; // Green
+        statusBadge.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800';
+        statusBadge.innerText = 'Safe Zone 🟢';
+
+        if (canBunk === 0) {
+          verdictCallout.className = 'p-4 rounded-xl border bg-amber-50 border-amber-200 text-amber-900 text-xs sm:text-sm font-semibold';
+          verdictCallout.innerHTML = `
+            <div class="text-amber-800 font-bold mb-1">⚠️ Borderline Safe!</div>
+            You are currently at <strong>${roundedPercent}%</strong>. You <strong>cannot bunk</strong> the next class, otherwise your attendance will drop below ${targetPercent}%. Attend the next class to build a buffer!
+          `;
+        } else {
+          verdictCallout.className = 'p-4 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-900 text-xs sm:text-sm font-semibold';
+          verdictCallout.innerHTML = `
+            <div class="text-emerald-800 font-bold text-sm mb-1">🎉 You Can Safely Bunk!</div>
+            You can chill and bunk the next <strong>${canBunk} class${canBunk > 1 ? 'es' : ''}</strong> consecutively! Your attendance will stay above <strong>${targetPercent}%</strong>.
+          `;
+        }
+      } else {
+        // Danger Zone / Catch-up calculation
+        // x = ceil((targetDecimal * total - attended) / (1 - targetDecimal))
+        const mustAttend = Math.ceil(((targetDecimal * total) - attended) / (1 - targetDecimal));
+        currentCalcData.actionType = 'attend';
+        currentCalcData.attendCount = mustAttend;
+
+        gaugeCircle.style.stroke = '#ef4444'; // Red
+        statusBadge.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800';
+        statusBadge.innerText = 'Shortage Alert 🔴';
+
+        verdictCallout.className = 'p-4 rounded-xl border bg-rose-50 border-rose-200 text-rose-900 text-xs sm:text-sm font-semibold';
+        verdictCallout.innerHTML = `
+          <div class="text-rose-800 font-bold text-sm mb-1">🚨 Attendance Shortage!</div>
+          You need to attend the next <strong>${mustAttend} class${mustAttend > 1 ? 'es' : ''}</strong> consecutively without bunking to reach <strong>${targetPercent}%</strong>!
+        `;
+      }
+    }
+
+    function shareAttendanceWhatsApp() {
+      if (!currentCalcData.percent) return;
+      let actionMsg = '';
+      if (currentCalcData.actionType === 'bunk') {
+        actionMsg = currentCalcData.bunkCount > 0 
+          ? `Chill scene hai, I can safely bunk next *${currentCalcData.bunkCount} classes* and still stay above ${currentCalcData.target}%! 😎`
+          : `Borderline safe! Ek bhi class miss nahi kar sakta nahi toh 75% se niche gir jayega!`;
+      } else {
+        actionMsg = `Attendance short hai! I need to attend next *${currentCalcData.attendCount} classes* consecutively without bunking to reach ${currentCalcData.target}%! 😭`;
+      }
+
+      const text = `📚 *College Attendance & Bunk Planner*:
+My Current Attendance is: *${currentCalcData.percent}%* (${currentCalcData.attended}/${currentCalcData.total} Classes).
+👉 ${actionMsg}
+
+Check your attendance and bunk limit here:
+https://free-student-tools.vercel.app/attendance-planner/`;
+
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function copyAttendanceSummary() {
+      if (!currentCalcData.percent) return;
+      const msg = `Attendance: ${currentCalcData.percent}% (${currentCalcData.attended}/${currentCalcData.total}). Calculated at https://free-student-tools.vercel.app/attendance-planner/`;
+      navigator.clipboard.writeText(msg).then(() => {
+        const btn = document.getElementById('copyAttendanceText');
+        btn.innerText = '✔ Copied!';
+        setTimeout(() => { btn.innerText = '📋 Copy'; }, 2000);
+      });
+    }
+
+    // SUBJECT-WISE TRACKER (LOCALSTORAGE)
+    let subjects = [];
+
+    function loadSubjects() {
+      try {
+        const stored = localStorage.getItem('freedailytools_subjects');
+        if (stored) {
+          subjects = JSON.parse(stored);
+        } else {
+          // Default initial subjects
+          subjects = [
+            { id: 1, name: 'Mathematics', attended: 24, total: 30 },
+            { id: 2, name: 'Computer Science', attended: 18, total: 25 },
+            { id: 3, name: 'Physics / Electronics', attended: 22, total: 28 }
+          ];
+        }
+      } catch (e) {
+        subjects = [];
+      }
+    }
+
+    function saveSubjects() {
+      try {
+        localStorage.setItem('freedailytools_subjects', JSON.stringify(subjects));
+      } catch (e) {}
+    }
+
+    function addSubjectRow() {
+      const newId = Date.now();
+      subjects.push({ id: newId, name: `Subject ${subjects.length + 1}`, attended: 10, total: 12 });
+      saveSubjects();
+      renderSubjects();
+    }
+
+    function updateSubject(id, field, value) {
+      const sub = subjects.find(s => s.id === id);
+      if (sub) {
+        if (field === 'name') sub.name = value;
+        else if (field === 'attended') sub.attended = parseInt(value, 10) || 0;
+        else if (field === 'total') sub.total = parseInt(value, 10) || 0;
+        saveSubjects();
+        renderSubjects();
+      }
+    }
+
+    function deleteSubject(id) {
+      subjects = subjects.filter(s => s.id !== id);
+      saveSubjects();
+      renderSubjects();
+    }
+
+    function clearSubjectData() {
+      if (confirm('Clear all saved subjects?')) {
+        subjects = [];
+        saveSubjects();
+        renderSubjects();
+      }
+    }
+
+    function renderSubjects() {
+      const tbody = document.getElementById('subjectsBody');
+      tbody.innerHTML = '';
+
+      let grandAttended = 0;
+      let grandTotal = 0;
+
+      subjects.forEach(s => {
+        grandAttended += s.attended;
+        grandTotal += s.total;
+
+        const pct = s.total > 0 ? ((s.attended / s.total) * 100).toFixed(1) : 0;
+        let verdict = '';
+
+        if (pct >= 75) {
+          const canBunk = Math.floor((s.attended - 0.75 * s.total) / 0.75);
+          verdict = `<span class="text-emerald-700 font-bold">Bunk ${canBunk} safely</span>`;
+        } else {
+          const mustAttend = Math.ceil((0.75 * s.total - s.attended) / 0.25);
+          verdict = `<span class="text-rose-700 font-bold">Attend ${mustAttend} more</span>`;
+        }
+
+        const tr = document.createElement('tr');
+        tr.className = 'border-b border-slate-100 hover:bg-slate-50/50 transition';
+        tr.innerHTML = `
+          <td class="py-2.5 px-2">
+            <input type="text" value="${s.name}" class="font-bold text-slate-800 bg-transparent outline-none border-b border-transparent focus:border-indigo-500 w-full" onchange="updateSubject(${s.id}, 'name', this.value)">
+          </td>
+          <td class="py-2.5 px-2">
+            <input type="number" min="0" value="${s.attended}" class="w-16 p-1 bg-slate-100 rounded text-center font-bold outline-none" onchange="updateSubject(${s.id}, 'attended', this.value)">
+          </td>
+          <td class="py-2.5 px-2">
+            <input type="number" min="1" value="${s.total}" class="w-16 p-1 bg-slate-100 rounded text-center font-bold outline-none" onchange="updateSubject(${s.id}, 'total', this.value)">
+          </td>
+          <td class="py-2.5 px-2 font-bold ${pct >= 75 ? 'text-emerald-600' : 'text-rose-600'}">
+            ${pct}%
+          </td>
+          <td class="py-2.5 px-2 text-xs">
+            ${verdict}
+          </td>
+          <td class="py-2.5 px-2 text-right">
+            <button onclick="deleteSubject(${s.id})" class="text-slate-400 hover:text-rose-600 transition">✕</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('aggAttended').innerText = grandAttended;
+      document.getElementById('aggTotal').innerText = grandTotal;
+      const overallPct = grandTotal > 0 ? ((grandAttended / grandTotal) * 100).toFixed(1) : 0;
+      const aggPercentEl = document.getElementById('aggPercent');
+      aggPercentEl.innerText = `${overallPct}%`;
+      aggPercentEl.className = `text-base font-extrabold ${overallPct >= 75 ? 'text-emerald-600' : 'text-rose-600'}`;
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      calculateAttendance();
+      loadSubjects();
+    });
+  </script>
+</body>
+</html>
